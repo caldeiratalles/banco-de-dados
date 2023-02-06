@@ -22,7 +22,7 @@ create view endereco_usuario as (
     left join  tb_estado   e        on e.id_estado                = c.tb_estado_id_estado
 );
 
-create view usuarios_que_doaram as (
+create view usuarios_que_receberam as (
     select u.id_usuario, d.nome, i.id_item, i.item, i.descricao, td.qtd_saida as qtd
     from tb_usuario u
     left join  tb_dados d    on d.id_dados               = u.tb_dados_id_dados
@@ -30,7 +30,7 @@ create view usuarios_que_doaram as (
     left join  tb_item i     on td.tb_item_id_item       = i.id_item
 );
 
-create view usuarios_que_receberam as (
+create view usuarios_que_doaram as (
     select u.id_usuario, d.nome, i.id_item, i.item, i.descricao, tr.qtd_entrada as qtd
     from tb_usuario u
     left join  tb_dados d    on d.id_dados               = u.tb_dados_id_dados
